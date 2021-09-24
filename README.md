@@ -1,6 +1,6 @@
 [![Latest Stable Version](http://poser.pugx.org/nguyenanhung/hashids-helper/v)](https://packagist.org/packages/nguyenanhung/hashids-helper) [![Total Downloads](http://poser.pugx.org/nguyenanhung/hashids-helper/downloads)](https://packagist.org/packages/nguyenanhung/hashids-helper) [![Latest Unstable Version](http://poser.pugx.org/nguyenanhung/hashids-helper/v/unstable)](https://packagist.org/packages/nguyenanhung/hashids-helper) [![License](http://poser.pugx.org/nguyenanhung/hashids-helper/license)](https://packagist.org/packages/nguyenanhung/hashids-helper) [![PHP Version Require](http://poser.pugx.org/nguyenanhung/hashids-helper/require/php)](https://packagist.org/packages/nguyenanhung/hashids-helper)
 
-# Template start helper, library
+# HashIds Helper
 
 Extends of hashids - Basic, Simple and Lightweight
 
