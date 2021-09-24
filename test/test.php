@@ -25,3 +25,12 @@ echo "EncodeId: " . $encodeId . PHP_EOL;
 $decodeId = $hash->decodeId($encodeId);
 echo "DecodeId: " . $decodeId . PHP_EOL;
 
+
+$id2 = 20210804;
+echo "SourceId 2: " . $id2 . PHP_EOL;
+$encodeId2 = hashIdsEncode($id2);
+echo "EncodeId 2: " . $encodeId2 . PHP_EOL;
+
+$decodeId2 = hashIdsDecode($encodeId2);
+echo "DecodeId 2: " . $decodeId2 . PHP_EOL;
+
