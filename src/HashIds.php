@@ -24,8 +24,8 @@ class HashIds implements Project
 {
     use Version;
 
-    const SALT       = 'w40):pc6cwS{mn9I_O=B$2Cr;=YXA#';
-    const MIN_LENGTH = 8;
+    const SALT       = 'Bear40):pc6cwS{mn9I_O=B$2Cr;=YXA#';
+    const MIN_LENGTH = 10;
     const ALPHABET   = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'; // alphabet
 
     /**
@@ -45,7 +45,7 @@ class HashIds implements Project
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/24/2021 22:12
      */
-    public function setConfig($config)
+    public function setConfig($config): HashIds
     {
         $this->config = $config;
 
@@ -60,7 +60,7 @@ class HashIds implements Project
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/24/2021 27:37
      */
-    public function getConfig()
+    public function getConfig(): array
     {
         return $this->config;
     }
@@ -68,18 +68,21 @@ class HashIds implements Project
     /**
      * Function prepareConfig
      *
-     * @param array $config
+     * @param $config
      *
      * @return array
      * @author   : 713uk13m <dev@nguyenanhung.com>
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/24/2021 38:44
      */
-    protected function prepareConfig($config = array())
+    protected function prepareConfig($config): array
     {
-        $salt          = isset($config['salt']) ? $config['salt'] : self::SALT;
-        $minHashLength = isset($config['minHashLength']) ? $config['minHashLength'] : self::MIN_LENGTH;
-        $alphabet      = isset($config['alphabet']) ? $config['alphabet'] : self::ALPHABET;
+        if (!is_array($config)) {
+            $config = array();
+        }
+        $salt          = $config['salt'] ?? self::SALT;
+        $minHashLength = $config['minHashLength'] ?? self::MIN_LENGTH;
+        $alphabet      = $config['alphabet'] ?? self::ALPHABET;
 
         return array(
             'salt'          => $salt,
@@ -98,7 +101,7 @@ class HashIds implements Project
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/15/2021 28:40
      */
-    public function encodeId($id)
+    public function encodeId($id): string
     {
         try {
             $config = $this->prepareConfig($this->config);
@@ -157,7 +160,7 @@ class HashIds implements Project
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/15/2021 43:30
      */
-    public function randomId()
+    public function randomId(): string
     {
         return uniqid('HungNG_', true);
     }
