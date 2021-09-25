@@ -22,7 +22,8 @@
     "require": {
         "php": ">=7.0",
         "ext-bcmath": "*",
-        "hashids/hashids": "^4.0 || ^3.0 || ^2.0"
+        "hashids/hashids": ">=2.0",
+        "symfony/polyfill-mbstring": "^1"
     },
     "autoload": {
         "psr-4": {
